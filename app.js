@@ -38,4 +38,19 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.get('/', function (req, res) {
+  res.send('hello world!')
+})
+
+app.post('/', function (req, res) {
+  res.send('got a post request')
+})
+
+app.put('/user', function (req, res) {
+  res.send('got a put request at /user')
+})
+
+app.delete('/user', function (req, res) {
+  res.send('got a delete request at /user')
+})
 module.exports = app;
