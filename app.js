@@ -38,19 +38,17 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.get('/', function (req, res) {
-  res.send('hello world!')
-})
+// serving static files in express
 
-app.post('/', function (req, res) {
-  res.send('got a post request')
-})
+express.static(root. [options])
 
-app.put('/user', function (req, res) {
-  res.send('got a put request at /user')
-})
+app.use(express.static('public'))
 
-app.delete('/user', function (req, res) {
-  res.send('got a delete request at /user')
-})
+app.use(express.static('public'))
+app.use(express.static('files'))
+
+app.use('/static', express.static('public'))
+
+app.use('/static', express.static(path.join(__dirname, 'public')))
+
 module.exports = app;
